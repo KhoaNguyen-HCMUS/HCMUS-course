@@ -84,7 +84,7 @@ void Queue_Recur<T>::print() {
     cout << "Queue is empty, can't print" << std::endl;
     return;
   }
-  cout << "Queue: ";
+  cout << "Queue: " << endl;
   printRecursive(front);
   cout << std::endl;
 }

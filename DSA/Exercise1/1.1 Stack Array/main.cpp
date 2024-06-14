@@ -32,16 +32,16 @@ int main() {
           int num;
           cin >> num;
           St.push(num);
-          St.print;
+          St.print();
           break;
         }
         case 2: {
           if (!St.isEmpty()) {
             int num = St.pop();
             cout << "Popped " << num << "\n";
-            St.print;
+            St.print();
           } else {
-            cout << "Stack is empty.\n";
+            cout << "Stack is empty, can't pop.\n";
           }
           break;
         }
@@ -77,16 +77,16 @@ int main() {
           int num;
           cin >> num;
           St.push(num);
-          St.print;
+          St.print();
           break;
         }
         case 2: {
           if (!St.isEmpty()) {
             int num = St.pop();
             cout << "Popped " << num << "\n";
-            St.print;
+            St.print();
           } else {
-            cout << "Stack is empty.\n";
+            cout << "Stack is empty, can't pop.\n";
           }
           break;
         }

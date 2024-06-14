@@ -68,11 +68,11 @@ T Stack<T>::pop() {
 
 template <typename T>
 void Stack<T>::print() {
-  if (isEmpty) {
+  if (isEmpty()) {
     cout << "Stack is empty. Can't print" << endl;
     return;
   }
-  cout << "Stack: ";
+  cout << "Stack: " << endl;
   printReversed(*this);
 }
 

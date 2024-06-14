@@ -79,6 +79,7 @@ void Queue<T>::print() {
     cout << "Queue is empty, can't print." << endl;
     return;
   }
+  cout << "Queue: " << endl;
   Node* temp = front;
   while (temp != nullptr) {
     cout << temp->data << " ";

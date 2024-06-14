@@ -38,6 +38,7 @@ void Queue_Recur<T>::releaseRecursively(Node* node) {
   }
   releaseRecursively(node->next);
   delete node;
+  node = nullptr;
 }
 
 template <typename T>
@@ -101,7 +102,7 @@ void Queue_Recur<T>::print() {
     cout << "Queue is empty, can't print." << endl;
     return;
   }
-  cout << "Queue: ";
+  cout << "Queue: " << endl;
   printRecursively(front);
   cout << endl;
 }

@@ -21,6 +21,8 @@ int main() {
   const int num_trials = 1000;  // Number of times to repeat the operation
   auto total_duration = 0;
 
+  cout << "\nAverage time to copy stack (array) with " << MAX
+       << " elements: " << endl;
   for (int i = 0; i < num_trials; ++i) {
     st2.init(MAX);
     auto start = high_resolution_clock::now();
@@ -30,8 +32,7 @@ int main() {
     total_duration += duration.count();
     st2.release();
   }
-  cout << "Average time to copy stack (array) by loop with " << MAX
-       << " elements: " << total_duration / num_trials << " microseconds"
+  cout << "Loop version: \t\t" << total_duration / num_trials << " microseconds"
        << endl;
 
   for (int i = 0; i < num_trials; ++i) {
@@ -43,9 +44,9 @@ int main() {
     total_duration += duration.count();
     st_recur2.release();
   }
-  cout << "Average time to copy stack (array) by recursion with " << MAX
-       << " elements: " << total_duration / num_trials << " microseconds"
-       << endl;
+  cout << "Recursive version: \t" << total_duration / num_trials
+       << " microseconds" << endl;
+  cout << endl;
 
   st.release();
   st_recur.release();

@@ -75,6 +75,6 @@ void Stack_Recur<T>::print() {
     cout << "Stack is empty. Can't print" << endl;
     return;
   }
-  cout << "Stack: ";
+  cout << "Stack: " << endl;
   printRecursively(top);
 }

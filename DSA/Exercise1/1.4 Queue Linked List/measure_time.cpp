@@ -20,7 +20,8 @@ int main() {
   Queue_Recur<int> q_recur2;
   const int num_trials = 1000;  // Number of times to repeat the operation
   auto total_duration = 0;
-
+  cout << "\nAverage time to copy queue (linked list) with " << MAX
+       << " elements: " << endl;
   for (int i = 0; i < num_trials; ++i) {
     q2.init();
     auto start = high_resolution_clock::now();
@@ -30,9 +31,7 @@ int main() {
     total_duration += duration.count();
     q2.release();
   }
-  cout << "Average time to copy and release queue (linked list) by loop "
-          "with "
-       << MAX << " elements: " << total_duration / num_trials << " microseconds"
+  cout << "Loop version: \t\t" << total_duration / num_trials << " microseconds"
        << endl;
 
   for (int i = 0; i < num_trials; ++i) {
@@ -44,11 +43,36 @@ int main() {
     total_duration += duration.count();
     q_recur2.release();
   }
-  cout << "Average time to copy and release queue (linked list) by recursion "
-          "with "
-       << MAX << " elements: " << total_duration / num_trials << " microseconds"
+  cout << "Recursive version: \t" << total_duration / num_trials
+       << " microseconds" << endl;
+
+  //----------------------------------------------------------------
+  cout << "\nAverage time to release queue (linked list) with " << MAX
+       << " elements: " << endl;
+  for (int i = 0; i < num_trials; ++i) {
+    q2.init();
+    q2.copyQueue(q);
+    auto start = high_resolution_clock::now();
+    q2.release();
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    total_duration += duration.count();
+  }
+  cout << "Loop version: \t\t" << total_duration / num_trials << " microseconds"
        << endl;
 
+  for (int i = 0; i < num_trials; ++i) {
+    q_recur2.init();
+    q_recur2.copyQueue(q_recur);
+    auto start = high_resolution_clock::now();
+    q_recur2.release();
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    total_duration += duration.count();
+  }
+  cout << "Recursive version: \t" << total_duration / num_trials
+       << " microseconds" << endl;
+  cout << endl;
   q.release();
   q_recur.release();
   return 0;

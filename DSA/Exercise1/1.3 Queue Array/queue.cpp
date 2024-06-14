@@ -69,7 +69,7 @@ void Queue<T>::print() {
     cout << "Queue is empty, can't print." << endl;
     return;
   }
-  cout << "Queue: ";
+  cout << "Queue: " << endl;
   for (int i = front; i <= rear; i++) cout << items[i] << " ";
   cout << endl;
 }

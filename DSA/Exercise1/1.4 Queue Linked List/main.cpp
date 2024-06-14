@@ -38,7 +38,7 @@ int main() {
             Q.print();
 
           } else {
-            cout << "Queue is empty.\n";
+            cout << "Queue is empty, can't dequeue\n";
           }
           break;
         }
@@ -80,7 +80,7 @@ int main() {
             Q.print();
 
           } else {
-            cout << "Queue is empty.\n";
+            cout << "Queue is empty, can't dequeue\n";
           }
           break;
         }

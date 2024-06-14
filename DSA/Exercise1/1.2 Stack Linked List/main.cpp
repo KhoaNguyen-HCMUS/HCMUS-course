@@ -37,7 +37,7 @@ int main() {
             cout << "Popped " << num << "\n";
             St.print();
           } else {
-            cout << "Stack is empty.\n";
+            cout << "Stack is empty, can't pop.\n";
           }
           break;
         }
@@ -78,7 +78,7 @@ int main() {
             cout << "Popped " << num << "\n";
             St.print();
           } else {
-            cout << "Stack is empty.\n";
+            cout << "Stack is empty, can't pop.\n";
           }
           break;
         }
