@@ -9,21 +9,21 @@ void Stack_Recur<T>::init() {
 }
 
 template <typename T>
-void Stack_Recur<T>::copyStack(const Stack_Recur<T>& original) {
+void Stack_Recur<T>::copyStack(Stack_Recur<T>& original) {
   if (original.top == nullptr) {
     top = nullptr;
   } else {
-    top = new Node(original.top->data);
-    copyStackRecursive(original.top->next, top);
+    top = new Node(original.top->data, nullptr);
+    copyStackRecursive(original.top->next, top->next);
   }
 }
 
 template <typename T>
-void Stack_Recur<T>::copyStackRecursive(Node* originalNode, Node* thisNode) {
+void Stack_Recur<T>::copyStackRecursive(Node* originalNode, Node*& thisNode) {
   if (originalNode == nullptr) {
-    thisNode->next = nullptr;
+    thisNode = nullptr;
   } else {
-    thisNode->next = new Node(originalNode->data);
+    thisNode = new Node(originalNode->data, nullptr);
     copyStackRecursive(originalNode->next, thisNode->next);
   }
 }

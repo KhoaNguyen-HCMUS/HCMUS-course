@@ -5,11 +5,12 @@ struct Stack_Recur {
   struct Node {
     T data;
     Node* next;
+    Node(T data, Node* next = nullptr) : data(data), next(next) {}
   };
   Node* top;
   void init();
-  void copyStack(const Stack_Recur<T>& original);
-  void copyStackRecursive(Node* originalNode, Node* thisNode);
+  void copyStack(Stack_Recur<T>& original);
+  void copyStackRecursive(Node* originalNode, Node*& thisNode);
 
   void release();
   void releaseRecursively(Node*& top);
