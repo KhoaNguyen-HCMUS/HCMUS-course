@@ -9,6 +9,7 @@ struct Stack_Recur {
   Node* top;
   void init();
   void copyStack(const Stack_Recur<T>& original);
+  void copyStackRecursive(Node* originalNode, Node* thisNode);
 
   void release();
   void releaseRecursively(Node*& top);
