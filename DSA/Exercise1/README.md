@@ -1,0 +1,3 @@
+# Implementing Stack and Queue from scratch
+
+ Stack and Queue are two fundamental data structures in programming. Stack allows adding and retrieving elements according to the LIFO (Last In, First Out) principle, while Queue allows adding and retrieving elements according to the FIFO (First In, First Out) principle. In this Exercise 1, I implement these two data structures, using struct and template.
