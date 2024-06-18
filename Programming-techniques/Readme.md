@@ -6,7 +6,7 @@ Write C/C++ program to cut Bitmap file into equal parts in command program to cu
 
 Command-line syntax:
 
-<<program>> <<file Bmp>> [-h <<parts in height>>] [-w <<parts in width>>]
+&lt;program&gt; &lt;file Bmp&gt; [-h &lt;parts in height&gt;] [-w &lt;parts in width&gt;]
 
 Example: program cutbmp.exe
 
