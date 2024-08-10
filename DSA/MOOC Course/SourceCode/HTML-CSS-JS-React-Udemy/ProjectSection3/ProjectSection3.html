@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page Gallery</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin-top: 20px;
+        padding: 0;
+      }
+
+      .thumbnails img {
+        height: 80px;
+        border: 4px solid #555;
+        padding: 10px;
+        margin: 0 10px 10px 0;
+        transition: transform 0.2s;
+      }
+
+      .thumbnails img:hover {
+        border: 4px solid #00ccff;
+        transform: scale(1.5);
+      }
+
+      .preview {
+        width: 600px; /* Đặt chiều rộng của khung ảnh chính */
+        margin: 0 auto; /* Căn giữa khung ảnh chính */
+      }
+
+      .preview img {
+        width: 100%; /* Đặt chiều rộng của hình ảnh chính bằng chiều rộng của khung */
+        border: 4px solid #444;
+        padding: 10px;
+      }
+    </style>
+</head>
+<body>
+    <div id="container" align="center">
+      <h1>My Web Page Gallery</h1>
+      <br />
+      <div class="preview">
+        <img id="mainImage" src="Gallery/IMG1.JPG" alt="Main Image" />
+      </div>
+      <br />
+      <div class="thumbnails">
+        <img onmouseover="changeImage('Gallery/IMG1.JPG')" src="Gallery/IMG1.JPG" alt="Thumbnail 1" />
+        <img onmouseover="changeImage('Gallery/IMG2.JPG')" src="Gallery/IMG2.JPG" alt="Thumbnail 2" />
+        <img onmouseover="changeImage('Gallery/IMG3.JPG')" src="Gallery/IMG3.JPG" alt="Thumbnail 3" />
+        <img onmouseover="changeImage('Gallery/IMG4.JPG')" src="Gallery/IMG4.JPG" alt="Thumbnail 4" />
+        <img onmouseover="changeImage('Gallery/IMG5.JPG')" src="Gallery/IMG5.JPG" alt="Thumbnail 5" />
+        <img onmouseover="changeImage('Gallery/IMG6.JPG')" src="Gallery/IMG6.JPG" alt="Thumbnail 6" />
+        <img onmouseover="changeImage('Gallery/IMG7.JPG')" src="Gallery/IMG7.JPG" alt="Thumbnail 7" />
+        <img onmouseover="changeImage('Gallery/IMG8.JPG')" src="Gallery/IMG8.JPG" alt="Thumbnail 8" />
+        <img onmouseover="changeImage('Gallery/IMG9.JPG')" src="Gallery/IMG9.JPG" alt="Thumbnail 9" />
+        <img onmouseover="changeImage('Gallery/IMG10.JPG')" src="Gallery/IMG10.JPG" alt="Thumbnail 10" />
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function changeImage(src) {
+        document.getElementById('mainImage').src = src;
+      }
+    </script>
+</body>
+</html>

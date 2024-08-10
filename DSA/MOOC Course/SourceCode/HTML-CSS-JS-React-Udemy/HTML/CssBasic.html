@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is a basic css" />
+    <title>Basic css</title>
+    <!-- <link rel="stylesheet" href="myStyle.css" /> -->
+    <style type="text/css">
+      h1 {
+        color: blue;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      p {
+        color: green;
+        font-size: 18px;
+      }
+      .blueboldtext {
+        color: blue;
+        font-weight: bold;
+        font-size: small;
+      }
+
+      .largegreentext {
+        color: green;
+        font-size: large;
+        font-weight: bold;
+      }
+
+      .underline {
+        text-decoration: underline;
+      }
+
+      .txtalign {
+        text-align: center;
+      }
+
+      .wordspacing {
+        word-spacing: 10px;
+      }
+
+      .txtstyle {
+        font-family: 'Courier New', Courier, monospace;
+
+        font-style: oblique;
+      }
+
+      .myborder {
+        border: 4px;
+        border-color: #333333;
+        border-style: dashed;
+      }
+
+      #div1 {
+        background-color: yellow;
+        height: 500px;
+        /* top - right - bottom - left */
+        margin: 0px 0px 30px 30px;
+        padding: 30px 0px 0px 30px;
+        background-image: url(img/websiteIMG.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      #div2 {
+        background-color: yellow;
+        width: auto;
+        min-width: 200;
+        max-width: 500;
+        height: 100%;
+        /* top - right - bottom - left */
+        margin: 0px 0px 30px 30px;
+        padding: 30px 0px 0px 30px;
+        background-image: url(img/websiteIMG.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      #div4 {
+        width: 500px;
+        height: 500px;
+        background-color: red;
+        /* position: absolute; ghi đè */
+        position: relative;
+        margin: 0px 30px 30px 30px;
+        float: left;
+        z-index: 1;
+      }
+
+      #div5 {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        display: inline-block;
+      }
+
+      #div6 {
+        width: 50px;
+        height: 50px;
+        background-color: green;
+        display: inline-block;
+      }
+
+      #container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border: 1px solid #000000;
+        z-index: 2;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+      }
+
+      /* unvisited link */
+      a:link {
+        color: green;
+      }
+
+      /* visited link */
+      a:visited {
+        color: blue;
+      }
+
+      /* mouse over link */
+      a:hover {
+        color: red;
+      }
+
+      /* selected link */
+      a:active {
+        color: yellow;
+      }
+
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        text-align: left;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 15px;
+      }
+      tr:hover {
+        background-color: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="div4"></div> -->
+    <!-- <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere unde porro ea obcaecati omnis temporibus quas quo
+      possimus dignissimos fugit aperiam esse, rem, ab, explicabo minus veniam ad excepturi voluptates. Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. At, dolores soluta? Exercitationem modi, quasi assumenda ut cum
+      molestias nesciunt a dolor quos tempore, odit dignissimos amet consequatur! Debitis, doloremque ullam! Lorem,
+      ipsum dolor sit amet consectetur adipisicing elit. At, dolores soluta? Exercitationem modi, quasi assumenda ut cum
+      molestias nesciunt a dolor quos tempore, odit dignissimos amet consequatur! Debitis, doloremque ullam! Lorem,
+      ipsum dolor sit amet consectetur adipisicing elit. At, dolores soluta? Exercitationem modi, quasi assumenda ut cum
+      molestias nesciunt a dolor quos tempore, odit dignissimos amet consequatur! Debitis, doloremque ullam! Lorem,
+      ipsum dolor sit amet consectetur adipisicing elit. At, dolores soluta? Exercitationem modi, quasi assumenda ut cum
+      molestias nesciunt a dolor quos tempore, odit dignissimos amet consequatur! Debitis, doloremque ullam!Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. At, dolores soluta? Exercitationem modi, quasi assumenda ut cum
+      molestias nesciunt a dolor quos tempore, odit dignissimos amet consequatur! Debitis, doloremque ullam!Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. At, dolores soluta? Exercitationem modi, quasi assumenda ut cum
+      molestias nesciunt a dolor quos tempore, odit dignissimos amet consequatur! Debitis, doloremque ullam!Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. At, dolores soluta? Exercitationem modi, quasi assumenda ut cum
+      molestias nesciunt a dolor quos tempore, odit dignissimos amet consequatur! Debitis, doloremque ullam!Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. At, dolores soluta? Exercitationem modi, quasi assumenda ut cum
+      molestias nesciunt a dolor quos tempore, odit dignissimos amet consequatur! Debitis, doloremque ullam!Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. At, dolores soluta? Exercitationem modi, quasi assumenda ut cum
+      molestias nesciunt a dolor quos tempore, odit dignissimos amet consequatur! Debitis, doloremque ullam!Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. At, dolores soluta? Exercitationem modi, quasi assumenda ut cum
+      molestias nesciunt a dolor quos tempore, odit dignissimos amet consequatur! Debitis, doloremque ullam!
+    </p> -->
+
+    <p>
+      <b><a href="###"> Sample link</a></b>
+    </p>
+
+    <table>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Grade</th>
+      </tr>
+      <tr>
+        <td>Nguyen</td>
+        <td>Van A</td>
+        <td>9.0</td>
+      </tr>
+      <tr>
+        <td>Nguyen</td>
+        <td>Van B</td>
+        <td>8.0</td>
+      </tr>
+      <tr>
+        <td>Nguyen</td>
+        <td>Van C</td>
+        <td>7.0</td>
+      </tr>
+    </table>
+  </body>
+</html>
