@@ -1,0 +1,28 @@
+\section{How I implemented the requirements}
+
+To hash a string, you used polynomial rolling hash function as the hints in requirements. The formula is:
+\begin{equation}
+	\text{hash}(s) = \left( \sum_{i = 0}^{n - 1} (s[i] \times p^i) \right) \mod m
+\end{equation}
+where:
+\begin{itemize}
+	\item $s$: The key as a string of length $n$.
+	\item $s[i]$: ASCII code of the character at position $i$ from $s$.
+	\item $p = 31$.
+	\item $m = 10^9 + 9$.
+\end{itemize}
+To hash the keys, I used the following hash functions:
+\begin{itemize}
+	\item Linear Probing: $h(k, i) = (h'(k) + i) \mod capacity$. $h'(k)$ is the hash value of key $k$.
+	\item Double Hashing: $h(k, i) = (h_1(k) + i \times h_2(k)) \mod capacity$. $h_1(k)$ is the first hash value of key $k$, and $h_2(k)$ is the second hash value of key $k$. $h_2(k) = 1 + h(k) \mod (capacity -1) $.
+	\item Quadratic Probing: $h(k, i) = (h'(k) + i^2) \mod capacity$.  $h'(k)$ is the hash value of key $k$.
+	\item Chaining using Linked List: $h(k, i) = (h'(k) + i) \mod capacity$. $h'(k)$ is the hash value of key $k$.  Each cell of the hash table is a linked list. When a collision occurs, the new element is inserted at the end of the linked list.
+	\item Chaining using AVL Tree: $h(k, i) = (h'(k) + i) \mod capacity$. $h'(k)$ is the hash value of key $k$. Each cell of the hash table is an AVL tree. When a collision occurs, the new element is inserted into the AVL tree.
+\end{itemize}
+
+\textbf{Quadratic probing} and \textbf{Double hashing} frequently encounter collisions when the hash table size is small or when keys hash to the same index. This can quickly lead to revisiting the same indices, especially if the capacity is a prime number.\\
+
+To address this issue, a rehash function needs to be implemented to increase the size of the hash table and redistribute the elements. The rehash function creates a new hash table with double size and transfers all elements from the old hash table to the new one. This helps to minimize collisions and improve the performance of the hash table.
+
+
+
