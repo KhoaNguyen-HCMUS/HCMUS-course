@@ -47,7 +47,8 @@ int main() {
   getline(cin, binary);
 
   float number = binaryToFloat(binary);
-  cout << "Corresponding (single) floating point number: " << number << endl;
+  cout << "Corresponding (single) floating point number: " << number << endl
+       << endl;
 
   return 0;
 }

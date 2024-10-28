@@ -28,12 +28,14 @@ int main() {
   }
   cout << endl;
 
-  float f1 = 1.4783f;
-  float f2 = 5.3974f;
-  float f3 = 4.7264f;
+  float f1 = 1.0f;
+  float f2 = 1e10f;
+  float f3 = -1e10f;
 
-  float result1 = (f1 + f2) + f3;
-  float result2 = f1 + (f2 + f3);
+  float result1 = (f1 + f2);
+  result1 += f3;
+  float result2 = (f2 + f3);
+  result2 += f1;
 
   cout << "Result of (f1 + f2) + f3: " << result1 << endl;
   cout << "Result of f1 + (f2 + f3): " << result2 << endl;
@@ -45,10 +47,11 @@ int main() {
          << endl;
   }
 
-  float f = 4.59f;
+  float f = 2.0f;
   int i = (int)(3.14159 * f);
   cout << "The value of i is: " << i << endl;
 
+  i = 3;
   f = f + (float)i;
   cout << "The value of f is: " << f << endl;
 
@@ -64,6 +67,7 @@ int main() {
   else
     cout << "false" << endl;
 
+  f = 3.5f;
   cout << "f == (float)((int)f): ";
   if (f == (float)((int)f))
     cout << "true" << endl;
@@ -75,4 +79,7 @@ int main() {
     cout << "true" << endl;
   else
     cout << "false" << endl;
+
+  cout << endl;
+  return 0;
 }

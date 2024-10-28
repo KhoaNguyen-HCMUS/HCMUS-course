@@ -31,19 +31,24 @@ void constructIntegerFromArray(const vector<bool>& A) {
 
 int main() {
   int X;
+
   cout << "Enter an integer X: ";
   cin >> X;
   printBinaryRepresentation(X);
 
+  cout << endl;
+
   vector<bool> A(32);
   cout << "Enter an array A of 32 elements: ";
+  char temp;
+
   for (int i = 0; i < 32; ++i) {
-    cin >> A[i];
+    cin >> temp;
+    A[i] = temp - '0';
   }
-  A = {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1,
-       0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1};
 
   constructIntegerFromArray(A);
+  cout << endl;
 
   return 0;
 }

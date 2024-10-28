@@ -6,10 +6,6 @@ using namespace std;
 
 vector<bool> stringToBitArray(const string& bitString) {
   vector<bool> bitArray(8);
-  if (bitString.length() != 8) {
-    cerr << "Error: Input string must be exactly 8 characters long." << endl;
-    return bitArray;
-  }
   for (int i = 0; i < 8; ++i) {
     if (bitString[i] == '0') {
       bitArray[i] = 0;
@@ -96,7 +92,7 @@ void printVector(vector<bool> a) {
 }
 
 pair<vector<bool>, vector<bool>> divideBitArrays(const vector<bool>& a,
-                                               const vector<bool>& b) {
+                                                 const vector<bool>& b) {
   vector<bool> Q = a;
   vector<bool> M = b;
   int k = 8;
@@ -135,15 +131,17 @@ pair<vector<bool>, vector<bool>> divideBitArrays(const vector<bool>& a,
 
 int main() {
   string bitString1, bitString2;
+  cout << "Enter the first 8-bit number (in two's complement):  ";
+  cin >> bitString1;
 
-  //   cout << "Enter the first 8-bit number (in two's complement): ";
-  //   cin >> bitString1;
+  cout << "Enter the second 8-bit number (in two's complement): ";
+  cin >> bitString2;
 
-  //   cout << "Enter the second 8-bit number (in two's complement): ";
-  //   cin >> bitString2;
+  if (bitString1.size() != 8 || bitString2.size() != 8) {
+    cerr << "Error: Input strings must have length 8." << endl;
+    return 1;
+  }
 
-  bitString1 = "11110100";  // -12
-  bitString2 = "11111011";  // -5
   vector<bool> bits1 = stringToBitArray(bitString1);
   vector<bool> bits2 = stringToBitArray(bitString2);
 
@@ -183,6 +181,7 @@ int main() {
   for (int bit : remBits) {
     cout << bit;
   }
+  cout << endl;
   cout << endl;
 
   return 0;
