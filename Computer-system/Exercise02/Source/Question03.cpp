@@ -72,14 +72,17 @@ int main() {
   string binary = "0 00000000 00000000000000000000001";
   cout << "Smallest float number greater than 0: " << binaryToFloat(binary)
        << endl;
-  cout << "Corresponding binary representation: " << binary << endl;
+  cout << "Corresponding binary representation: 0 00000000 "
+          "00000000000000000000001"
+       << endl
+       << endl;
 
   //--------------------------------------------------------------------------------
   float zero = 0.0f;
   cout << "Zero: " << zero << endl;
   dumpFloat(&zero);
 
-  unsigned int denormBits = 1;  // Exponent = 0, Significand != 0
+  unsigned int denormBits = 1;
   float denorm;
   unsigned int *denormPtr = reinterpret_cast<unsigned int *>(&denorm);
   *denormPtr = denormBits;
@@ -94,5 +97,31 @@ int main() {
   cout << "NaN number: " << nan << endl;
   dumpFloat(&nan);
 
+  cout << "Mathematical operations create special float numbers: " << endl;
+  float x = 1.0f;
+  float temp;
+  cout << "X - (+inf): " << (x - inf) << endl;
+  temp = x - inf;
+  dumpFloat(&temp);
+
+  cout << "(+inf) - (+inf): " << (inf - inf) << endl;
+  temp = inf - inf;
+  dumpFloat(&temp);
+
+  cout << "X / 0: " << (x / 0.0f) << endl;
+  temp = x / 0.0f;
+  dumpFloat(&temp);
+
+  cout << "0 / 0: " << (0.0f / 0.0f) << endl;
+  temp = 0.0f / 0.0f;
+  dumpFloat(&temp);
+
+  cout << "inf / inf: " << (inf / inf) << endl;
+  temp = inf / inf;
+  dumpFloat(&temp);
+
+  cout << "sqrt(X) with X < 0: " << sqrt(-x) << endl;
+  temp = sqrt(-x);
+  dumpFloat(&temp);
   return 0;
 }

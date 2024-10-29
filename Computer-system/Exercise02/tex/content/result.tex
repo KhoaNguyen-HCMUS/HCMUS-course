@@ -1,8 +1,8 @@
 \newpage
 \section{Kết quả và giải thích}
 \subsection{Bài 1}
-Viết chương trình nhập vào số chấm động. Hãy xuất ra biểu diễn nhị phân từng thành phần (dấu, phần mũ, phần trị) của số chấm động vừa nhập. 
-	
+Viết chương trình nhập vào số chấm động. Hãy xuất ra biểu diễn nhị phân từng thành phần (dấu, phần mũ, phần trị) của số chấm động vừa nhập.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{images/img1.PNG}
@@ -11,7 +11,7 @@ Viết chương trình nhập vào số chấm động. Hãy xuất ra biểu di
 
 \subsection{Bài 2}
 
-Viết chương trình nhập vào biểu diễn nhị phân của số chấm động. Hãy xuất ra biểu diễn thập 
+Viết chương trình nhập vào biểu diễn nhị phân của số chấm động. Hãy xuất ra biểu diễn thập
 phân tương ứng
 
 \begin{figure}[H]
@@ -20,8 +20,9 @@ phân tương ứng
 	\caption{Chụp màn hình kết quả bài 2.}
 \end{figure}
 
+\newpage
 \subsection{Bài 3}
-Dùng 2 hàm đã viết để khảo sát các câu hỏi: 
+Dùng 2 hàm đã viết để khảo sát các câu hỏi:
 
 \begin{itemize}
 	\item 1.3E+20 có biểu diễn nhị phân ra sao.
@@ -33,9 +34,10 @@ Dùng 2 hàm đã viết để khảo sát các câu hỏi:
 
 Số 0 trong biểu diễn số chấm động có hai dạng: số 0 dương và số 0 âm. Cả hai đều có phần mũ và phần trị bằng 0, chỉ khác nhau ở bit dấu.
 
+
 \begin{itemize}
-    \item Số 0 dương: bit dấu = 0, phần mũ = 0, phần trị = 0.
-    \item Số 0 âm: bit dấu = 1, phần mũ = 0, phần trị = 0.
+	\item Số 0 dương: bit dấu = 0, phần mũ = 0, phần trị = 0.
+	\item Số 0 âm: bit dấu = 1, phần mũ = 0, phần trị = 0.
 \end{itemize}
 
 Ví dụ, biểu diễn nhị phân của số 0 dương trong chuẩn IEEE 754 (32-bit) là:
@@ -48,9 +50,9 @@ Ví dụ, biểu diễn nhị phân của số 0 dương trong chuẩn IEEE 754 
 Số không chuẩn hóa là các số rất nhỏ gần bằng 0, được sử dụng để biểu diễn các giá trị nhỏ hơn giá trị nhỏ nhất có thể biểu diễn được bằng số chuẩn hóa. Trong biểu diễn số không chuẩn hóa, phần mũ bằng 0 nhưng phần trị khác 0.
 
 \begin{itemize}
-    \item Bit dấu: 0 hoặc 1.
-    \item Phần mũ: 0.
-    \item Phần trị: khác 0.
+	\item Bit dấu: 0 hoặc 1.
+	\item Phần mũ: 0.
+	\item Phần trị: khác 0.
 \end{itemize}
 
 Ví dụ, biểu diễn nhị phân của một số không chuẩn hóa trong chuẩn IEEE 754 (32-bit) là:
@@ -63,8 +65,8 @@ Ví dụ, biểu diễn nhị phân của một số không chuẩn hóa trong c
 Số vô cùng được sử dụng để biểu diễn các giá trị vượt quá phạm vi của số chấm động. Có hai dạng: vô cùng dương và vô cùng âm.
 
 \begin{itemize}
-    \item Vô cùng dương: bit dấu = 0, phần mũ = 255 (toàn bit 1), phần trị = 0.
-    \item Vô cùng âm: bit dấu = 1, phần mũ = 255 (toàn bit 1), phần trị = 0.
+	\item Vô cùng dương: bit dấu = 0, phần mũ = 255 (toàn bit 1), phần trị = 0.
+	\item Vô cùng âm: bit dấu = 1, phần mũ = 255 (toàn bit 1), phần trị = 0.
 \end{itemize}
 
 Ví dụ, biểu diễn nhị phân của số vô cùng dương trong chuẩn IEEE 754 (32-bit) là:
@@ -77,9 +79,9 @@ Ví dụ, biểu diễn nhị phân của số vô cùng dương trong chuẩn I
 NaN được sử dụng để biểu diễn các giá trị không hợp lệ hoặc không xác định, chẳng hạn như kết quả của phép chia 0 cho 0 hoặc căn bậc hai của số âm. Có hai loại NaN: NaN yên lặng (quiet NaN) và NaN báo lỗi (signaling NaN).
 
 \begin{itemize}
-    \item Bit dấu: 0 hoặc 1.
-    \item Phần mũ: 255 (toàn bit 1).
-    \item Phần trị: khác 0.
+	\item Bit dấu: 0 hoặc 1.
+	\item Phần mũ: 255 (toàn bit 1).
+	\item Phần trị: khác 0.
 \end{itemize}
 
 Ví dụ, biểu diễn nhị phân của một NaN trong chuẩn IEEE 754 (32-bit) là:
@@ -87,24 +89,96 @@ Ví dụ, biểu diễn nhị phân của một NaN trong chuẩn IEEE 754 (32-b
 0 11111111 10000000000000000000000
 \end{verbatim}
 
+\subsubsection{X - (+inf)}
+
+Khi thực hiện phép toán `X - (+inf)`, kết quả sẽ là `-inf` (vô cùng âm). Điều này xảy ra vì bất kỳ số hữu hạn nào trừ đi số vô cùng dương đều sẽ dẫn đến kết quả là số vô cùng âm.
+
+\begin{itemize}
+	\item Ví dụ: Nếu X = 1.0, thì 1.0 - (+inf) = -inf.
+	\item Biểu diễn nhị phân của `-inf` trong chuẩn IEEE 754 (32-bit) là:
+	      \begin{verbatim}
+1 11111111 00000000000000000000000
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{(+inf) - (+inf)}
+
+Khi thực hiện phép toán `(+inf) - (+inf)`, kết quả sẽ là `NaN` (Not a Number). Điều này xảy ra vì phép toán này không xác định được giá trị cụ thể, do đó kết quả là một giá trị không phải là số.
+
+\begin{itemize}
+	\item Ví dụ: (+inf) - (+inf) = NaN.
+	\item Biểu diễn nhị phân của `NaN` trong chuẩn IEEE 754 (32-bit) là:
+	      \begin{verbatim}
+0 11111111 10000000000000000000000
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{X / 0}
+
+Khi thực hiện phép toán `X / 0`, kết quả sẽ là `+inf` (vô cùng dương) nếu X là số dương, và `-inf` (vô cùng âm) nếu X là số âm. Điều này xảy ra vì phép chia một số hữu hạn cho 0 dẫn đến kết quả là số vô cùng.
+
+\begin{itemize}
+	\item Ví dụ: Nếu X = 1.0, thì 1.0 / 0 = +inf.
+	\item Biểu diễn nhị phân của `+inf` trong chuẩn IEEE 754 (32-bit) là:
+	      \begin{verbatim}
+0 11111111 00000000000000000000000
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{0 / 0}
+
+Khi thực hiện phép toán `0 / 0`, kết quả sẽ là `NaN` (Not a Number). Điều này xảy ra vì phép toán này không xác định được giá trị cụ thể, do đó kết quả là một giá trị không phải là số.
+
+\begin{itemize}
+	\item Ví dụ: 0 / 0 = NaN.
+	\item Biểu diễn nhị phân của `NaN` trong chuẩn IEEE 754 (32-bit) là:
+	      \begin{verbatim}
+0 11111111 10000000000000000000000
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{(+inf) / (+inf)}
+
+Khi thực hiện phép toán `(+inf) / (+inf)`, kết quả sẽ là `NaN` (Not a Number). Điều này xảy ra vì phép toán này không xác định được giá trị cụ thể, do đó kết quả là một giá trị không phải là số.
+
+\begin{itemize}
+	\item Ví dụ: (+inf) / (+inf) = NaN.
+	\item Biểu diễn nhị phân của `NaN` trong chuẩn IEEE 754 (32-bit) là:
+	      \begin{verbatim}
+0 11111111 10000000000000000000000
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{sqrt(X) với X < 0}
+
+Khi thực hiện phép toán `sqrt(X)` với X < 0, kết quả sẽ là `NaN` (Not a Number). Điều này xảy ra vì căn bậc hai của một số âm không xác định được giá trị cụ thể trong tập số thực, do đó kết quả là một giá trị không phải là số.
+
+\begin{itemize}
+	\item Ví dụ: sqrt(-1.0) = NaN.
+	\item Biểu diễn nhị phân của `NaN` trong chuẩn IEEE 754 (32-bit) là:
+	      \begin{verbatim}
+0 11111111 10000000000000000000000
+\end{verbatim}
+\end{itemize}
+
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{images/img3.PNG}
-    \caption{Chụp màn hình kết quả bài 3.}
+	\centering
+	\includegraphics[width=\textwidth]{images/img3.PNG}
+	\caption{Chụp màn hình kết quả bài 3.}
 \end{figure}
 
 \subsection{Bài 4}
-Khảo sát các trường hợp sau đây (viết chương trình thử nghiệm và giải thích kết quả): 
+Khảo sát các trường hợp sau đây (viết chương trình thử nghiệm và giải thích kết quả):
 
 \begin{itemize}
 	\item Chuyển đổi float -> int -> float.Kết quả như ban đầu ?
 	\item Chuyển đổi int -> float -> int. Kết quả như ban đầu ?
 	\item Phép cộng số chấm động có tính kết hợp ?
 	\item i = (int) (3.14159 * f);
-	\item f = f + (float) i; 
+	\item f = f + (float) i;
 	\item `if (i == (int)((float) i)) { printf(“true”); }`
 	\item if (i == (int)((double) i)) { printf(“true”); }
-	\item if (f == (float)((int) f)) { printf(“true”); } 
+	\item if (f == (float)((int) f)) { printf(“true”); }
 	\item if (f == (double)((int) f)) { printf(“true”); }
 \end{itemize}
 
