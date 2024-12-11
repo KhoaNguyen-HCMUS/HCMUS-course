@@ -1,0 +1,281 @@
+\section{Viết hàm luận lý cho mạch đèn LED 7 đoạn}
+
+Để viết hàm luận lý, ta cần xác định các đoạn LED nào sẽ bật khi một số nhị phân nào đó được đưa vào mạch. Ta sẽ sử dụng bản đồ Karnaugh để xác định hàm luận lý cho mỗi đoạn LED. Sau đó, kết hợp các hàm luận lý này để tạo ra hàm luận lý cho mạch đèn LED 7 đoạn.
+
+\subsection{Đoạn LED \texorpdfstring{$D_0$}{D0}}
+
+$D_0 = \sum(0,2,3,5,6,8,9,10,11,12,13,14,15)$
+
+\renewcommand{\arraystretch}{1.5} % Tăng khoảng cách dòng lên 1.5 lần
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		                   & \(\overline{I_1}\)   & \(\overline{I_1}\)   & \(I_1\)              & \(I_1\)              &                    \\
+		\hline
+		\(\overline{I_3}\) & \cellcolor{yellow}0  & 1                    & \cellcolor{yellow}3  & \cellcolor{yellow}2  & \(\overline{I_2}\) \\
+		\hline
+		\(\overline{I_3}\) & 4                    & \cellcolor{yellow}5  & 7                    & \cellcolor{yellow}6  & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}12 & \cellcolor{yellow}13 & \cellcolor{yellow}15 & \cellcolor{yellow}14 & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}8  & \cellcolor{yellow}9  & \cellcolor{yellow}11 & \cellcolor{yellow}10 & \(\overline{I_2}\) \\
+		\hline
+		                   & \(\overline{I_0}\)   & \(I_0\)              & \(I_0\)              & \(\overline{I_0}\)   &                    \\
+		\hline
+	\end{tabular}
+	\caption*{Bản đồ Karnaugh cho đoạn LED \(D_0\)}
+\end{table}
+
+Các tế bào màu vàng tương ứng với các tế bào có giá trị 1:
+
+\((12,13,14,15,8,9,11,10): I_3\)
+
+\((0,2,8,10): \overline{I_2 I_0} \)
+
+\((3,2,11,10): \overline{I_2} I_1\)
+
+\((2,6,14,10): I_1 \overline{I_0}\)
+
+\((5,13): I_2 \overline{I_1} I_0\)
+
+=> \(D_0 = I_3 + \overline{I_2 I_0} + \overline{I_2} I_1 + I_1 \overline{I_0} + I_2 \overline{I_1} I_0\)
+
+\subsection{Đoạn LED \texorpdfstring{$D_1$}{D1}}
+
+\(D_1 = \sum(0,1,3,4,5,6,7,8,9,11,12,13,14,15)\)
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		                   & \(\overline{I_1}\)   & \(\overline{I_1}\)   & \(I_1\)              & \(I_1\)              &                    \\
+		\hline
+		\(\overline{I_3}\) & \cellcolor{yellow}0  & \cellcolor{yellow}1  & \cellcolor{yellow}3  & 2                    & \(\overline{I_2}\) \\
+		\hline
+		\(\overline{I_3}\) & \cellcolor{yellow}4  & \cellcolor{yellow}5  & \cellcolor{yellow}7  & \cellcolor{yellow}6  & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}12 & \cellcolor{yellow}13 & \cellcolor{yellow}15 & \cellcolor{yellow}14 & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}8  & \cellcolor{yellow}9  & \cellcolor{yellow}11 & 10                   & \(\overline{I_2}\) \\
+		\hline
+		                   & \(\overline{I_0}\)   & \(I_0\)              & \(I_0\)              & \(\overline{I_0}\)   &                    \\
+		\hline
+	\end{tabular}
+	\caption*{Bản đồ Karnaugh cho đoạn LED \(D_1\)}
+\end{table}
+
+Các tế bào màu vàng tương ứng với các tế bào có giá trị 1:
+
+\((0,4,12,8,1,5,13,9): \overline{I_1}\)
+
+\((1,5,13,9,3,7,15,11): I_0\)
+
+\((4,5,7,6,12,13,15,14): I_2\)
+
+=> \(D_1 = \overline{I_1} + I_0 + I_2\)
+
+\subsection{Đoạn LED \texorpdfstring{$D_2$}{D2}}
+
+\(D_2 = \sum(0,2,6,8,10,14)\)
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		                   & \(\overline{I_1}\)  & \(\overline{I_1}\) & \(I_1\) & \(I_1\)              &                    \\
+		\hline
+		\(\overline{I_3}\) & \cellcolor{yellow}0 & 1                  & 3       & \cellcolor{yellow}2  & \(\overline{I_2}\) \\
+		\hline
+		\(\overline{I_3}\) & 4                   & 5                  & 7       & \cellcolor{yellow}6  & \(I_2\)            \\
+		\hline
+		\(I_3\)            & 12                  & 13                 & 15      & \cellcolor{yellow}14 & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}8 & 9                  & 11      & \cellcolor{yellow}10 & \(\overline{I_2}\) \\
+		\hline
+		                   & \(\overline{I_0}\)  & \(I_0\)            & \(I_0\) & \(\overline{I_0}\)   &                    \\
+		\hline
+	\end{tabular}
+	\caption*{Bản đồ Karnaugh cho đoạn LED \(D_2\)}
+\end{table}
+
+Các tế bào màu vàng tương ứng với các tế bào có giá trị 1:
+
+(0,2,8,10): \(\overline{I_2 I_0}\)
+
+(2,6,14,10): \(I_1 \overline{I_0}\)
+
+=> \(D_2 = \overline{I_2 I_0} + I_1 \overline{I_0}\)
+
+\subsection{Đoạn LED \texorpdfstring{$D_3$}{D3}}
+
+\(D_3 = \sum(2,3,4,5,6,8,9,10,11,12,13,14,15)\)
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		                   & \(\overline{I_1}\)   & \(\overline{I_1}\)   & \(I_1\)              & \(I_1\)              &                    \\
+		\hline
+		\(\overline{I_3}\) & 0                    & 1                    & \cellcolor{yellow}3  & \cellcolor{yellow}2  & \(\overline{I_2}\) \\
+		\hline
+		\(\overline{I_3}\) & \cellcolor{yellow}4  & \cellcolor{yellow}5  & 7                    & \cellcolor{yellow}6  & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}12 & \cellcolor{yellow}13 & \cellcolor{yellow}15 & \cellcolor{yellow}14 & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow} 8 & \cellcolor{yellow}9  & \cellcolor{yellow}11 & \cellcolor{yellow}10 & \(\overline{I_2}\) \\
+		\hline
+		                   & \(\overline{I_0}\)   & \(I_0\)              & \(I_0\)              & \(\overline{I_0}\)   &                    \\
+		\hline
+	\end{tabular}
+	\caption*{Bản đồ Karnaugh cho đoạn LED \(D_3\)}
+\end{table}
+
+Các tế bào màu vàng tương ứng với các tế bào có giá trị 1:
+
+\((12,13,14,15,8,9,11,10): I_3\)
+
+(3,2,11,10): \(\overline{I_2} I_1\)
+
+(2,6,14,10): \(I_1 \overline{I_0}\)
+
+(4,5,12,13): \(I_2 \overline{I_1}\)
+
+=> \(D_3 = I_3 + \overline{I_2} I_1 + I_1 \overline{I_0} + I_2 \overline{I_1}\)
+
+\subsection{Đoạn LED \texorpdfstring{$D_4$}{D4}}
+
+\(D_4 = \sum(0,1,2,3,4,7,8,9,10,11,12,15)\)
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		                   & \(\overline{I_1}\)   & \(\overline{I_1}\)  & \(I_1\)              & \(I_1\)              &                    \\
+		\hline
+		\(\overline{I_3}\) & \cellcolor{yellow}0  & \cellcolor{yellow}1 & \cellcolor{yellow}3  & \cellcolor{yellow}2  & \(\overline{I_2}\) \\
+		\hline
+		\(\overline{I_3}\) & \cellcolor{yellow}4  & 5                   & \cellcolor{yellow}7  & 6                    & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}12 & 13                  & \cellcolor{yellow}15 & 14                   & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}8  & \cellcolor{yellow}9 & \cellcolor{yellow}11 & \cellcolor{yellow}10 & \(\overline{I_2}\) \\
+		\hline
+		                   & \(\overline{I_0}\)   & \(I_0\)             & \(I_0\)              & \(\overline{I_0}\)   &                    \\
+		\hline
+	\end{tabular}
+	\caption*{Bản đồ Karnaugh cho đoạn LED \(D_4\)}
+\end{table}
+
+Các tế bào màu vàng tương ứng với các tế bào có giá trị 1:
+
+(0,1,3,2,8,9,11,10): \(\overline{I_2}\)
+
+(0,4,12,8): \(\overline{I_1 I_0}\)
+
+(3,7,15,11): \(I_1 I_0\)
+
+=> \(D_4 = \overline{I_2} + \overline{I_1 I_0} + I_1 I_0\)
+
+\subsection{Đoạn LED \texorpdfstring{$D_5$}{D5}}
+
+\(D_5 = \sum(0,4,5,6,8,9,10,11,12,13,14,15)\)
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		                   & \(\overline{I_1}\)   & \(\overline{I_1}\)   & \(I_1\)              & \(I_1\)              &                    \\
+		\hline
+		\(\overline{I_3}\) & \cellcolor{yellow}0  & 1                    & 3                    & 2                    & \(\overline{I_2}\) \\
+		\hline
+		\(\overline{I_3}\) & \cellcolor{yellow}4  & \cellcolor{yellow}5  & 7                    & \cellcolor{yellow}6  & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}12 & \cellcolor{yellow}13 & \cellcolor{yellow}15 & \cellcolor{yellow}14 & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}8  & \cellcolor{yellow}9  & \cellcolor{yellow}11 & \cellcolor{yellow}10 & \(\overline{I_2}\) \\
+		\hline
+		                   & \(\overline{I_0}\)   & \(I_0\)              & \(I_0\)              & \(\overline{I_0}\)   &                    \\
+		\hline
+	\end{tabular}
+	\caption*{Bản đồ Karnaugh cho đoạn LED \(D_5\)}
+\end{table}
+
+Các tế bào màu vàng tương ứng với các tế bào có giá trị 1:
+
+\((12,13,14,15,8,9,11,10): I_3\)
+
+(0,4,12,8): \(\overline{I_1 I_0}\)
+
+(4,5,12,13): \(I_2 \overline{I_1}\)
+
+(4,6,12,14): \(I_2 \overline{I_0}\)
+
+=> \(D_5 = I_3 + \overline{I_1 I_0} + I_2 \overline{I_1} + I_2 \overline{I_0}\)
+
+\subsection{Đoạn LED \texorpdfstring{$D_6$}{D6}}
+
+\(D_6 = \sum(0,2,3,5,6,7,8,9,10,11,12,13,14,15)\)
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		                   & \(\overline{I_1}\)   & \(\overline{I_1}\)   & \(I_1\)              & \(I_1\)              &                    \\
+		\hline
+		\(\overline{I_3}\) & \cellcolor{yellow}0  & 1                    & \cellcolor{yellow}3  & 2                    & \(\overline{I_2}\) \\
+		\hline
+		\(\overline{I_3}\) & 4                    & \cellcolor{yellow}5  & 7                    & \cellcolor{yellow}6  & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}12 & \cellcolor{yellow}13 & \cellcolor{yellow}15 & \cellcolor{yellow}14 & \(I_2\)            \\
+		\hline
+		\(I_3\)            & \cellcolor{yellow}8  & \cellcolor{yellow}9  & \cellcolor{yellow}11 & \cellcolor{yellow}10 & \(\overline{I_2}\) \\
+		\hline
+		                   & \(\overline{I_0}\)   & \(I_0\)              & \(I_0\)              & \(\overline{I_0}\)   &                    \\
+		\hline
+	\end{tabular}
+	\caption*{Bản đồ Karnaugh cho đoạn LED \(D_6\)}
+
+\end{table}
+
+Các tế bào màu vàng tương ứng với các tế bào có giá trị 1:
+
+\((12,13,14,15,8,9,11,10): I_3\)
+
+\((3,7,15,11,2,6,14,10): I_1\)
+
+\((0,2,8,10): \overline{I_2 I_0} \)
+
+(5,7,13,15): \(I_2 I_0\)
+
+=> \(D_6 = I_3 + I_1 + \overline{I_2 I_0} + I_2 I_0\)
+
+\subsection{Kết luận}
+
+\[
+	\begin{aligned}
+		D_0 & = I_3 + \overline{I_2 I_0} + \overline{I_2} I_1 + I_1 \overline{I_0} + I_2 \overline{I_1} I_0 \\
+		D_1 & = \overline{I_1} + I_0 + I_2                                                                  \\
+		D_2 & = \overline{I_2 I_0} + I_1 \overline{I_0}                                                     \\
+		D_3 & = I_3 + \overline{I_2} I_1 + I_1 \overline{I_0} + I_2 \overline{I_1}                          \\
+		D_4 & = \overline{I_2} + \overline{I_1 I_0} + I_1 I_0                                               \\
+		D_5 & = I_3 + \overline{I_1 I_0} + I_2 \overline{I_1} + I_2 \overline{I_0}                          \\
+		D_6 & = I_3 + I_1 + \overline{I_2 I_0} + I_2 I_0
+	\end{aligned}
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
