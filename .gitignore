@@ -7,3 +7,6 @@
 *.out
 *.synctex.gz
 *.toc
+*.o
+
+raylib-5.0
